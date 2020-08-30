@@ -35,8 +35,9 @@ let taskList = [
 ];
 function App() {
   return (
-    <body style={styles.bodyColor}>
-      <header style={styles.logo}>TT</header>
+    <body style={styles.app}>
+      <header style={styles.appHeader}>Today'S Todo</header>
+      <h1 style={styles.appLogo}>TT</h1>
 
       <h1 style={styles.h1}>Today's Todos</h1>
       <h5>Keep all of your tasks in one place.</h5>
@@ -65,18 +66,28 @@ function App() {
   );
 }
 const styles = {
- bodyColor:{
-  backgroundColor: "pink"
+ app:{
+  backgroundColor: "pink",
+  textAlign:"center",
 },
-
+appHeader:{
+  backgroundColor: "#282c34",
+  minHeight: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "calc(10px + 2vmin)",
+  color: "white",
+},
 ulDeco:{
   listStyle:"none",
 },
 
-logo: {
-  color:"blue",
-  textAlign:"right",
-  fontSize:"40px",
+appLogo: {
+  height: "40vmin",
+  pointerEvents: "none",
+  animation: "App-logo-spin infinite 20s linear",
 },
 
 h1: {
