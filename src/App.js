@@ -73,7 +73,7 @@ ulDeco:{
   listStyle:"none",
 },
 
-logo: {
+appLogo: {
   color:"blue",
   textAlign:"right",
   fontSize:"40px",
