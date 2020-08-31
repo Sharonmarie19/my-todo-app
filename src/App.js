@@ -1,7 +1,9 @@
-import React from "react";
-import logo from "./images/logo.svg";
+import React, { Component } from "react";
+
 import "./App.css";
-const profile = {
+
+
+const user = {
   name: "Sharon",
   id: 1,
   avatar: "",
@@ -9,86 +11,78 @@ const profile = {
 let taskList = [
   {
     taskName: "Laundry",
+    id:2,
     completed: true,
     reoccuring: false,
   },
   {
     taskName: "Feed the kids",
+    id:3,
     completed: false,
     reoccuring: false,
   },
   {
     taskName: "Make cookies for the bakesale",
+    id:4,
     completed: false,
     reoccuring: false,
   },
   {
     taskName: "DRINK",
+    id:5,
     completed: false,
     reoccuring: false,
   },
   {
     taskName: "Science project",
-    completed: false,
+    id:6,
+    completed: true,
     reoccuring: false,
   },
-];
+]
+
 function App() {
   return (
-    <body style={styles.bodyColor}>
-      <header style={styles.logo}>TT</header>
-
-      <h1 style={styles.h1}>Today's Todos</h1>
-      <h5>Keep all of your tasks in one place.</h5>
-
-      <h2 style={styles.allText}>Create New Todo</h2>
-      <input type="text" placeholder="Add new task" /><button style={styles.button}>Save</button>
-      <h2 style={styles.allText}>Add Details</h2> 
-      <input type="text" placeholder="Write a note" /><button style={styles.button}>Save</button>
-
-      <ul style={styles.ulDeco}>
-        {taskList.map((task) => {
-          return (
-            <li>
-              <p>
-                <input type="checkbox" checked={task.completed} />
+   
+    <body style={styles.body}>
+       <header>
+           <h1 style={styles.logo}>TT</h1>
+       </header>
+    <h1 style={styles.text}>Today's Todos</h1>
+    <h5>Keep your tasks in one place.</h5>
+    <h2 style={styles.text}>Create a New Task</h2>
+    <input type="text" placeholder="Add Task"/>
+    <h2 style={styles.text}>Create a Note</h2>
+    <input type="text" placeholder="Add Note"/>
+<ul style={styles.list}>
+  {taskList.map((task)=>(
+    <li style={styles.list} key={task.id}>
+      
+              <p style={
+                task.completed 
+                ?styles.taskDone 
+                : styles.taskNew}>
+                <input type="checkbox" checked={task.completed}/>
+              
                 {task.taskName}
               </p>
-              <p>{task.completed}</p>
-            </li>
-            
-          );
-        })}
-      </ul>
-      <button style={styles.button}>Save</button>
+
+    </li>
+  ))}
+</ul>
     </body>
-  );
+              );
 }
-const styles = {
- bodyColor:{
-  backgroundColor: "pink"
+
+
+
+
+
+const styles= {
+body:{
+  backgroundColor:"yellow",
 },
 
-ulDeco:{
-  listStyle:"none",
-},
+}
 
-appLogo: {
-  color:"blue",
-  textAlign:"right",
-  fontSize:"40px",
-},
-
-h1: {
-  color:"blue",
-  textAlign:"center",
-},
-allText: {
-  color:"blue",
-},
-button:{
-  borderRadius:"200px",
-  backgroundColor:"blue",
-},
-};
 export default App;
