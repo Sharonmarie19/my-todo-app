@@ -3,12 +3,23 @@ import React from "react"
 
 function Todos(props){
 return(
-    <li style={styles.list} >
-      <p> 
-        <input type="checkbox" />
-      </p>
+  <ul style={styles.list}>
+  {props.todoTask.map((task)=>(
+    <li style={styles.list} key={task.id}>
+      
+              <p style={
+                task.completed 
+                ?styles.taskDone 
+                : styles.taskNew}>
+                <input type="checkbox" checked={task.completed}/>
+              
+                {task.taskName}
+              </p>
+
     </li>
-    )
+  ))}
+    </ul> 
+)
 }
 const styles={
     list:{
@@ -31,3 +42,4 @@ const styles={
           color:"black",
       },
 }
+export default Todos

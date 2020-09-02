@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-
+import React from "react";
+import Todos from "./components/Todos.js"
+import Profile from "./images/profile-pic.png"
 import "./App.css";
 
 
 const user = {
   name: "Sharon",
   id: 1,
-  avatar: "",
+  avatar: Profile,
 };
 let taskList = [
   {
@@ -46,7 +47,11 @@ function App() {
    
     <body style={styles.body}>
        <header>
+         <nav>
+          <img src={Profile} alt=""/> 
+          <h3>Sharon W.</h3>
            <h1 style={styles.logo}>TT</h1>
+           </nav>
        </header>
     <h1 style={styles.text}>Today's Todos</h1>
     <h5>Keep your tasks in one place.</h5>
@@ -54,7 +59,10 @@ function App() {
     <input type="text" placeholder="Add Task"/>
     <h2 style={styles.text}>Create a Note</h2>
     <input type="text" placeholder="Add Note"/>
-<ul style={styles.list}>
+    <Todos todoTask={taskList}>
+
+    </Todos>
+{/* <ul style={styles.list}>
   {taskList.map((task)=>(
     <li style={styles.list} key={task.id}>
       
@@ -69,7 +77,7 @@ function App() {
 
     </li>
   ))}
-</ul>
+</ul> */}
     </body>
               );
 }
