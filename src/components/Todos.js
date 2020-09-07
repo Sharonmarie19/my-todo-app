@@ -22,18 +22,13 @@ return(
 )
 }
 const styles={
+    
     list:{
+        
+        listStyle:"none",
         textAlign:"left",
-        listDecoration:"none",
       },
-      text:{
-        color:"blue",
-      },
-      logo:{
-        color:"blue",
-        textAlign:"right",
-       
-      },
+      
       taskDone:{
           color:"gray",
           textDecoration:"line-through",

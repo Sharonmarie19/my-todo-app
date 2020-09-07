@@ -1,6 +1,10 @@
 import React from "react";
 import Todos from "./components/Todos.js"
 import Profile from "./images/profile-pic.png"
+import Calendar from "./images/Vector.png"
+import Notes from "./images/whh_notes.png"
+import Edit from "./images/el_file-edit.png"
+import Logo from "./images/logo.png"
 import "./App.css";
 
 
@@ -44,41 +48,35 @@ let taskList = [
 
 function App() {
   return (
-   
-    <body style={styles.body}>
-       <header>
-         <nav>
-          <img src={Profile} alt=""/> 
-          <h3>Sharon W.</h3>
-           <h1 style={styles.logo}>TT</h1>
-           </nav>
-       </header>
-    <h1 style={styles.text}>Today's Todos</h1>
+    <>
+    <header >
+    <nav style={stylesList.header}>
+    <img src={Logo} alt="calendar"style={stylesList.logoImg}/>
+    
+    
+     <img src={Profile} alt=""style={stylesList.imgProfile}/> 
+     <h3>Sharon W.</h3>
+     <img src={Edit} alt="pen and paper"style={stylesList.img}/>
+     <img src={Notes}alt="notebook"style={stylesList.img}/>
+     <img src={Calendar} alt="calendar"style={stylesList.img}/>
+     
+      </nav>
+  </header>
+    <body style={stylesList.body}>
+       
+    <h1 style={stylesList.text}>Today's Todos</h1>
     <h5>Keep your tasks in one place.</h5>
-    <h2 style={styles.text}>Create a New Task</h2>
-    <input type="text" placeholder="Add Task"/>
-    <h2 style={styles.text}>Create a Note</h2>
-    <input type="text" placeholder="Add Note"/>
+    <h2 style={stylesList.text}>Create Todo List</h2>
+    
+    <input type="text" placeholder="Add Task"/><button style={stylesList.botton}>Add</button>
+    
     <Todos todoTask={taskList}>
 
     </Todos>
-{/* <ul style={styles.list}>
-  {taskList.map((task)=>(
-    <li style={styles.list} key={task.id}>
-      
-              <p style={
-                task.completed 
-                ?styles.taskDone 
-                : styles.taskNew}>
-                <input type="checkbox" checked={task.completed}/>
-              
-                {task.taskName}
-              </p>
 
-    </li>
-  ))}
-</ul> */}
+
     </body>
+    </>
               );
 }
 
@@ -86,11 +84,43 @@ function App() {
 
 
 
-const styles= {
+const stylesList= {
+  header:{
+    marginTop:"30px",
+    height:"60px",
+    display:"flex",
+    flexDirection:"row",  
+    justifyContent:"space-evenly", 
+    // border:"#2D294E",
+    // borderWidth:".5px",
+    // borderStyle:"solid",
+   },
+  img:{
+    marginTop:"20px",
+    width:"5%",
+    height:"30%",
+   },
+   imgProfile:{
+    marginTop:"12px",
+    width:"12%",
+    height:"55%",
+   },
+   logoImg:{
+     width:"15%",
+     height:"35px",
+   },
 body:{
-  backgroundColor:"yellow",
+  marginTop:"60px",
+  backgroundColor:"#F9F9FA",
+  textAlign:"center",
+},
+text:{
+  color:"blue",
 },
 
+button:{
+  borderRadius:"150px",
+},
 }
 
 export default App;
