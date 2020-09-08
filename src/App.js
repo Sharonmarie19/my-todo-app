@@ -101,9 +101,9 @@ const stylesList= {
     height:"30%",
    },
    imgProfile:{
-    marginTop:"12px",
-    width:"12%",
-    height:"55%",
+    marginTop:"20px",
+    width:"10%",
+    height:"50%",
    },
    logoImg:{
      width:"15%",
