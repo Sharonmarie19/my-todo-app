@@ -1,40 +1,30 @@
-import React from "react"
+import React from "react";
+import Newtodo from "./Newtodo";
 
+const Todos = (tasks) => {
+  return (
+    <div className="todo-container">
+      <ul className="todo-list">
+        {/* {tasks.map((tasks) => (
+          <Newtodo text={tasks.text} />
+        ))} */}
+      </ul>
+    </div>
+  );
+};
 
-function Todos(props){
-return(
-  <ul style={styles.list}>
-  {props.todoTask.map((task)=>(
-    <li style={styles.list} key={task.id}>
-      
-              <p style={
-                task.completed 
-                ?styles.taskDone 
-                : styles.taskNew}>
-                <input type="checkbox" checked={task.completed}/>
-              
-                {task.taskName}
-              </p>
+const styles = {
+  list: {
+    listStyle: "none",
+    textAlign: "center",
+  },
 
-    </li>
-  ))}
-    </ul> 
-)
-}
-const styles={
-    
-    list:{
-        
-        listStyle:"none",
-        textAlign:"left",
-      },
-      
-      taskDone:{
-          color:"gray",
-          textDecoration:"line-through",
-      },
-      taskNew:{
-          color:"black",
-      },
-}
-export default Todos
+  taskDone: {
+    color: "gray",
+    textDecoration: "line-through",
+  },
+  taskNew: {
+    color: "black",
+  },
+};
+export default Todos;
