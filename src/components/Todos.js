@@ -1,40 +1,29 @@
-import React from "react"
+
+import React, { useState } from "react";
+import  Todoform from "./Todoform";
 
 
-function Todos(props){
+function Todos(){
+  const [todos, setTodos]= useState([]);
+
+  const addTodo = todo => {
+    if(!todo.text || /^\s*$/.test(todo.text)){
+    return;
+  }
+  const newTodos = [todo, ...todos];
+
+  setTodos(newTodos);
+  console.log(...todos);
+};
+
 return(
-  <ul style={styles.list}>
-  {props.todoTask.map((task)=>(
-    <li style={styles.list} key={task.id}>
-      
-              <p style={
-                task.completed 
-                ?styles.taskDone 
-                : styles.taskNew}>
-                <input type="checkbox" checked={task.completed}/>
-              
-                {task.taskName}
-              </p>
+  <div>
+  <h1>Create Your Todo</h1>
+  <Todoform onSubmit={addTodo}/>
+  </div>
+);
+}
 
-    </li>
-  ))}
-    </ul> 
-)
-}
-const styles={
-    
-    list:{
-        
-        listStyle:"none",
-        textAlign:"left",
-      },
-      
-      taskDone:{
-          color:"gray",
-          textDecoration:"line-through",
-      },
-      taskNew:{
-          color:"black",
-      },
-}
+
+
 export default Todos
