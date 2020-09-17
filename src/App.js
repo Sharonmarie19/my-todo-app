@@ -52,7 +52,7 @@ class App extends Component {
           <button style={stylesList.button}>+</button>
           <List todoTask={this.state.tasks} />
           <h2 style={stylesList.h2}>Add Note</h2>
-          <input type="text" placeholder="Add Task" />
+          <input type="text" placeholder="Add Note" />
           <button style={stylesList.button}>+</button>
         </div>
       </body>

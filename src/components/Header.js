@@ -13,9 +13,9 @@ return (
     <nav style={stylesList.header}>
       <img src={Profile}/>
       <h1>Sharon W.</h1>
-      <img src={Notes} alt=""style={stylesList.img}/>
-      <img src={Calendar} alt=""style={stylesList.img}/>
-      <img src={Edit} alt=""style={stylesList.img}/>
+      <i class="fa fa-pencil-square-o"style={stylesList.img}></i>
+      <i class="fa fa-calendar"style={stylesList.img}></i>
+      <i class="fa fa-edit" style={stylesList.img}></i>
     </nav>
   </header>
   )
@@ -44,10 +44,9 @@ const stylesList= {
         height:"55px",
       },
      img:{
-        marginTop:"20px",
-        width:"25px",
-        height:"30%",
-        
+         margin:"10px",
+        fontSize:"36px",
+        color:"#052D82",
        },
     }
 
