@@ -1,40 +1,49 @@
 import React from "react";
+import ReactDOM from 'react-dom'
 
-function List (props){
-    return(
-      <ul >
-      {props.todoTask.map((task)=>(
-        <li  key={task.id} style={styles.list}>
-    
-                  <p style={
-                    task.completed 
-                    ?styles.taskDone 
-                    : styles.taskNew}>
-                    <input type="checkbox" checked={task.completed}/>
-    
-                    {task.title}
-                  </p>
-    
+
+
+
+
+function List(props) {
+  return (
+    <ul>
+      {props.todoTask.map((task) => (
+        <li key={task.id} style={styles.list}>
+          <p style={task.completed ? styles.taskDone : styles.taskNew}>
+            <input type="checkbox" checked={task.completed} />
+            {task.title}
+            <button style={styles.button}><i class="fa fa-edit"></i></button>
+            <button style={styles.button}><i class="fa fa-trash-o"></i></button>
+            
+          </p>
         </li>
       ))}
-        </ul> 
-    )
-    }
+    </ul>
+  );
+}
 
-    const styles={
+const styles = {
+  list: {
+    margin: "5px",
+    borderStyle: "solid",
+    borderRadius: "5px",
+    borderWidth: "1px",
+    listStyle: "none",
+    textAlign: "left",
+  },
 
-        list:{
-    borderStyle:"solid",
-            listDecoration:"none",
-            textAlign:"left",
-          },
-    
-          taskDone:{
-              color:"#ADC8FF",
-              textDecoration:"line-through",
-          },
-          taskNew:{
-              color:"#05215B",
-          },
-        }
-export default List
+  taskDone: {
+    color: "#ADC8FF",
+    textDecoration: "line-through",
+  },
+  taskNew: {
+    color: "#05215B",
+  },
+  button: {
+    margin:"5px",
+    backgroundColor: "#05215B",
+    color: "white",
+  },
+};
+export default List;
