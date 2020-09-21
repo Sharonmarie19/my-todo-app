@@ -20,7 +20,7 @@ class Clock extends React.Component {
     }
     if (this.state.day === 5) {
       greeting = "TGIF!!!";
-    }else if (this.state.day === 0){
+    }else if (this.state.day === 1){
         greeting = "What day is it?";
     }
     return (
