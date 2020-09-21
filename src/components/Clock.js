@@ -8,10 +8,13 @@ class Clock extends React.Component {
     this.setState({ now: new Date() });
   };
   componentDidMount() {
-    setInterval(() => this.tick(), 1000);
+    this.timerId = setInterval(() => this.tick(), 1000);
     this.setState((state) => {
       return { day: state.now.getDay() };
     });
+  }
+  componentWillUnmount(){
+clearInterval(this.timerId)
   }
   render() {
     let greeting = "";
