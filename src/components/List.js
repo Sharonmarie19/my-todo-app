@@ -4,11 +4,12 @@ import ReactDOM from 'react-dom'
 
 
 
-
 function List(props) {
-  const handleDelete = () => {
-    alert("You deleted"+ props.tasks.name);
-  };
+  
+
+
+  
+  
   return (
     
     <ul>
@@ -18,7 +19,7 @@ function List(props) {
             <input type="checkbox" checked={task.completed} />
             {task.title}
             <button style={styles.button}><i class="fa fa-edit"></i></button>
-            <button style={styles.button} onClick={handleDelete}><i class="fa fa-trash-o"></i></button>
+            <button style={styles.button}><i class="fa fa-trash-o"></i></button>
             
           </p>
         </li>

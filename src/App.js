@@ -37,19 +37,35 @@ class App extends Component {
       newTaskTitle: "",
     };
   }
+
+  handleTaskDelete = (id) => {
+    this.setState((state) => {
+      const filteredArray = state.tasks.filter((products) => {
+        if (products.id === id) {
+          return false;
+        } else {
+          return true;
+        }
+      });
+      return {
+        tasks: filteredArray,
+      };
+    });
+  };
+
   handleNewTaskChange = (event) => {
     this.setState({ newTaskTitle: event.target.value });
   };
 
   handleNewAddTask = (event) => {
-    this.setState((state) => { 
-      return{
+    this.setState((state) => {
+      return {
         tasks: [...state.tasks, { name: state.newTaskTitle }],
-        newTaskTitle:"",
+        newTaskTitle: "",
       };
     });
   };
- 
+
   render() {
     return (
       <body style={stylesList.body}>
@@ -65,8 +81,7 @@ class App extends Component {
             onChange={this.handleNewTaskChange}
             value={this.state.newTaskTitle}
           />
-          <button style={stylesList.button} 
-          onClick={this.handleNewAddTask}>
+          <button style={stylesList.button} onClick={this.handleNewAddTask}>
             +
           </button>
           <List todoTask={this.state.tasks} />
