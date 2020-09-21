@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import List from "./components/List.js";
 import Header from "./components/Header.js";
+import Clock from "./components/Clock"
+
+const TODO_LIST_KEY = "todoapp_list";
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +40,20 @@ class App extends Component {
       newTaskTitle: "",
     };
   }
-
+  componentDidMount() {
+    let todoListStr = localStorage.getItem(TODO_LIST_KEY);
+    if (todoListStr) {
+      this.setState({
+        todoList: JSON.parse(todoListStr)
+      })
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.todoList !== prevState.todoList) {
+      let todoListStr = JSON.stringify(this.state.todoList);
+      localStorage.setItem(TODO_LIST_KEY, todoListStr);
+    }
+  }
   handleTaskDelete = (id) => {
     this.setState((state) => {
       const filteredArray = state.tasks.filter((products) => {
@@ -70,8 +86,9 @@ class App extends Component {
     return (
       <body style={stylesList.body}>
         <div className="user-container">
+        <Clock/>
           <Header />
-
+         
           <h1 style={stylesList.h1}>Today's Todos</h1>
           <h5 style={stylesList.h5}>Keep your tasks where you'll see 'em</h5>
           <h2 style={stylesList.h2}>Create A Task</h2>
@@ -85,14 +102,18 @@ class App extends Component {
             +
           </button>
           <List todoTask={this.state.tasks} />
-          <h2 style={stylesList.h2}>Add Note</h2>
-          <input type="text" placeholder="Add Note" />
-          <button style={stylesList.button}>+</button>
+
+          
         </div>
       </body>
     );
   }
 }
+
+
+
+
+
 const stylesList = {
   body: {
     backgroundColor: "#E0EEFB",
