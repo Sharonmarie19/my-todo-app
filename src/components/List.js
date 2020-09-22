@@ -1,30 +1,33 @@
 import React from "react";
-import ReactDOM from 'react-dom'
-
-
-
+import ReactDOM from "react-dom";
 
 function List(props) {
-  
-
-
-  
-  
   return (
-    
-    <ul>
-      {props.todoTask.map((task) => (
-        <li key={task.id} style={styles.list}>
-          <p style={task.completed ? styles.taskDone : styles.taskNew}>
-            <input type="checkbox" checked={task.completed} />
-            {task.title}
-            <button style={styles.button}><i class="fa fa-edit"></i></button>
-            <button style={styles.button}><i class="fa fa-trash-o"></i></button>
-            
-          </p>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul>
+        {props.todoTask.map((task) => (
+          <li key={task.id} style={styles.list}>
+            <p style={task.completed ? styles.taskDone : styles.taskNew}>
+              <input
+                type="checkbox"
+                defaultChecked={task.completed}
+                onChange={() => props.handleChecked(task.id)}
+              />
+              {task.title}
+              <button style={styles.button}>
+                <i class="fa fa-edit"></i>
+              </button>
+              <button
+                style={styles.button}
+                onClick={() => props.handleTaskDelete(task.id)}
+              >
+                <i class="fa fa-trash-o"></i>
+              </button>
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -46,9 +49,10 @@ const styles = {
     color: "#05215B",
   },
   button: {
-    margin:"5px",
+    margin: "5px",
     backgroundColor: "#05215B",
     color: "white",
   },
+  listFormat: {},
 };
 export default List;
