@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 
 function List(props) {
   return (
-    <div>
+    <div style={styles.listFormat}>
       <ul>
         {props.todoTask.map((task) => (
           <li key={task.id} style={styles.list}>
+           
+
+            
             <p style={task.completed ? styles.taskDone : styles.taskNew}>
               <input
                 type="checkbox"
@@ -25,8 +28,10 @@ function List(props) {
               </button>
             </p>
           </li>
+          
         ))}
       </ul>
+      
     </div>
   );
 }
@@ -53,6 +58,11 @@ const styles = {
     backgroundColor: "#05215B",
     color: "white",
   },
-  listFormat: {},
+  listFormat: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
 };
 export default List;

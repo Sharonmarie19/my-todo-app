@@ -9,8 +9,8 @@ const Header = () => {
     <header>
       <img src={Logo} alt="" style={stylesList.logoImg} />
       <nav style={stylesList.header}>
-        <img src={Profile} />
-        <h1>Sharon W.</h1>
+        <img src={Profile}  />
+        <h1 style={stylesList.userName}>Sharon W.</h1>
 
         <Link to="/tasks" style={stylesList.links}>Home</Link>
         <Link to="/tasks" style={stylesList.links}>Profile</Link>
@@ -37,15 +37,16 @@ const stylesList = {
     width: "55px",
     height: "55px",
   },
-  img: {
-    margin: "10px",
-    fontSize: "36px",
-    color: "#052D82",
-  },
+  
+    
   links :{
     marginTop: "25px",
     color: "#052D82",
-  }
+  },
+  userName:{
+    color: "#052D82",
+    
+  },
 };
 
 export default Header;

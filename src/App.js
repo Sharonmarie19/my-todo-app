@@ -129,6 +129,7 @@ class App extends Component {
               </div>
             </Route>
             <Route path="/tasks">
+              <div >
               <h2 style={stylesList.h2}>Create A Task</h2>
               <input
                 type="text"
@@ -144,6 +145,7 @@ class App extends Component {
                 handleTaskDelete={this.handleTaskDelete}
                 handleChecked={this.handleChecked}
               />
+              </div>
             </Route>
           </Switch>
         </div>
@@ -183,5 +185,11 @@ const stylesList = {
     alignItems: "center",
     justifyContent: "space-around",
   },
+  create:{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-around",
+  }
 };
 export default App;
