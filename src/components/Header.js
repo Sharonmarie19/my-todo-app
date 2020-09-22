@@ -37,7 +37,11 @@ const stylesList = {
     width: "55px",
     height: "55px",
   },
-
+  img: {
+    margin: "10px",
+    fontSize: "36px",
+    color: "#052D82",
+  },
   links :{
     marginTop: "25px",
     color: "#052D82",
