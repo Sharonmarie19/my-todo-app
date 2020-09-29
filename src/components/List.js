@@ -47,15 +47,15 @@ const styles = {
   },
 
   taskDone: {
-    color: "#ADC8FF",
+    color: "#8d93ab",
     textDecoration: "line-through",
   },
   taskNew: {
-    color: "#05215B",
+    color: "#16213e",
   },
   button: {
     margin: "5px",
-    backgroundColor: "#05215B",
+    backgroundColor: "#07689f",
     color: "white",
   },
   listFormat: {

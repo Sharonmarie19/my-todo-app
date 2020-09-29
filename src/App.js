@@ -156,27 +156,27 @@ class App extends Component {
 
 const stylesList = {
   body: {
-    backgroundColor: "#E0EEFB",
+    backgroundColor: "#f6f5f5",
   },
   h1: {
     textAlign: "center",
-    color: "#05215B",
+    color: "#132743",
   },
   h2: {
     textAlign: "left",
-    color: "#05215B",
+    color: "#132743",
   },
   h5: {
     textAlign: "center",
-    color: "#05215B",
+    color: "#132743",
   },
   button: {
-    backgroundColor: "#05215B",
+    backgroundColor: "#07689f",
     color: "white",
   },
   todoIcons: {
     fontSize: "48px",
-    color: "#05215B",
+    color: "#132743",
     paddingTop: "10px",
   },
   icons: {

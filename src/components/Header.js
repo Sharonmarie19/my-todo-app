@@ -28,9 +28,10 @@ const stylesList = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
-    border: "#85C1F9",
-    borderWidth: "3px",
+    border: "#00334e",
+    borderWidth: "10px",
     borderStyle: "ridge",
+    backgroundColor:"#d6e0f0",
   },
   logoImg: {
     paddingTop: "15px",
